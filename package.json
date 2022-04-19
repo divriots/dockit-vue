@@ -1,6 +1,6 @@
 {
-  "name": "@backlight-dev/divriots.dockit-vue",
-  "version": "0.0.0",
+  "name": "@divriots/divriots.dockit-vue",
+  "version": "0.0.1",
   "description": "",
   "license": "MIT",
   "type": "module",
@@ -8,6 +8,13 @@
   "scripts": {
     "serve": "npx backlight@latest serve JwppqaVhCm2NyL9qmkDM --open"
   },
-  "devDependencies": {},
-  "dependencies": {}
+  "devDependencies": {
+    "@divriots/studio-doc-compiler": "^0.0.31"
+  },
+  "dependencies": {
+    "@divriots/dockit-core": "^0.8.2",
+    "prettier": "^2.6.2",
+    "vue": "^3.2.33",
+    "vue-live": "^2.0.0-beta.5"
+  }
 }

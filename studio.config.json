@@ -2,18 +2,13 @@
   "packages": {
     "dir": "",
     "menu": [
-      [
-        "TOKENS",
-        []
-      ],
-      [
-        "COMPONENTS",
-        []
-      ],
-      [
-        "INFRASTRUCTURE",
-        []
-      ]
+      "introduction",
+      ["components", ["playground", "description", "props"]],
+      ["layout", ["layout"]],
+      ["infrastructure", ["types"]]
     ]
+  },
+  "doc": {
+    "markdownEngine": "vue"
   }
 }
