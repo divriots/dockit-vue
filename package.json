@@ -1,6 +1,6 @@
 {
-  "name": "@divriots/divriots.dockit-vue",
-  "version": "0.0.0",
+  "name": "@divriots/dockit-vue",
+  "version": "0.0.1",
   "description": "",
   "license": "MIT",
   "type": "module",
