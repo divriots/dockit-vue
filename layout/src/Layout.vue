@@ -39,7 +39,6 @@ import 'https://cdn.jsdelivr.net/npm/dark-tailwindcss-typography@0.5.0-dark.0/ty
 import 'https://cdn.jsdelivr.net/npm/prism-themes@1.9.0/themes/prism-vsc-dark-plus.min.css';
 import '@divriots/dockit-core/style.css';
 import type { Page, Context } from '@divriots/studio-doc-compiler';
-import '@divriots/dockit-core/css-showcases/dockit-css-showcases.define.js';
 import { setupSpeedyLinks } from '@divriots/dockit-core/speedy-links';
 import moonSvg from './moon.svg?raw';
 import sunSvg from './sun.svg?raw';
