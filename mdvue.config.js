@@ -1,5 +1,5 @@
-import Layout from '@divriots/dockit-vue/layout/src/Layout.vue';
+import ThisLayout from './internals/src/ThisLayout.vue';
 
 export default {
-  Layout,
+  Layout: ThisLayout,
 };

@@ -5,7 +5,7 @@
       "introduction",
       ["components", ["playground", "description", "props"]],
       ["layout", ["layout"]],
-      ["infrastructure", ["types"]]
+      ["infrastructure", ["internals"]]
     ]
   },
   "doc": {

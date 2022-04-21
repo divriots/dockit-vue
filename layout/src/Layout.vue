@@ -38,7 +38,7 @@
 import 'https://cdn.jsdelivr.net/npm/dark-tailwindcss-typography@0.5.0-dark.0/typography.min.css';
 import 'https://cdn.jsdelivr.net/npm/prism-themes@1.9.0/themes/prism-vsc-dark-plus.min.css';
 import '@divriots/dockit-core/style.css';
-import type { Page } from '@divriots/studio-doc-compiler';
+import type { Page, Context } from '@divriots/studio-doc-compiler';
 import '@divriots/dockit-core/css-showcases/dockit-css-showcases.define.js';
 import { setupSpeedyLinks } from '@divriots/dockit-core/speedy-links';
 import moonSvg from './moon.svg?raw';
@@ -46,10 +46,16 @@ import sunSvg from './sun.svg?raw';
 import logoSvg from './logo.svg?raw';
 import menuSvg from './menu.svg?raw';
 import xSvg from './x.svg?raw';
-// TODO: expose Backlight typings
-import { pagesGraph, mapPageUrlToRenderModuleUrl, base } from '~doc-context';
 import { computed, provide, ref } from 'vue';
 import { ColorThemeKey } from './LayoutConstants';
+
+const props = defineProps<{
+  docContext: Context & {
+    mapPageUrlToRenderModuleUrl: any
+  }
+}>();
+
+const { pagesGraph, base, mapPageUrlToRenderModuleUrl } = props.docContext;
 
 setupSpeedyLinks({
   mapLinkUrlToModuleUrl: (url) => {
