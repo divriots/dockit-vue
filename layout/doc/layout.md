@@ -1,16 +1,44 @@
 # Vue layout
 
-Easiest way to use this layout is to use the following configuration in your `mdvue.config.js` file:
+This layout features a **responsive nav menu** and a **dark mode**.
+
+The easiest way to use it is to use the following configuration in your `mdvue.config.js` file:
 
 ```js
-import Layout from '@divriots/dockit-vue/layout/src/Layout.vue';
+import Layout from '~/layout/src/Layout.vue';
 
 export default {
   Layout,
 };
 ```
 
-This layout features a **responsive nav menu** and a **dark mode**.
+Where `Layout.vue` is a SFC that could look like
+
+```js
+<template>
+  <Layout :docContext="docContext">
+    <slot></slot>
+  </Layout>
+</template>
+
+<script setup lang="ts">
+import * as docContext from '~doc-context';
+</script>
+```
+
+If you want to be able to use `Props`, `Description` or `Playground` components without having to import them in your all of your documentation files, you can also leverage the `enhanceApp` hook together with the `registerComponents` function, making the `mdvue.config.js` file look like:
+
+```js
+import Layout from '~/layout/src/Layout.vue';
+import { registerComponents } from '@divriots/dockit-vue';
+
+export default {
+  Layout: Layout,
+  enhanceApp: ({ app }) => {
+    app.use(registerComponents);
+  },
+};
+```
 
 Here are a few standard Markdown formatting examples:
 

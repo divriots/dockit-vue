@@ -1,5 +1,9 @@
-import ThisLayout from './internals/src/ThisLayout.vue';
+import Layout from '~/internals/src/Layout.vue';
+import { registerComponents } from '@divriots/dockit-vue';
 
 export default {
-  Layout: ThisLayout,
+  Layout: Layout,
+  enhanceApp: ({ app }) => {
+    app.use(registerComponents);
+  },
 };

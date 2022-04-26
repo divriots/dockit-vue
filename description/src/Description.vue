@@ -5,7 +5,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from "vue";
+import { defineComponent } from 'vue';
 
 /**
  * Provides the description of a component based on its comments.
@@ -15,12 +15,12 @@ export default defineComponent({
     /**
      * Component to provide the description for
      */
-    of: { type: Object, required: true }
+    of: { type: Object, required: true },
   },
   computed: {
     description() {
       return this.of.__docgenInfo?.description;
-    }
-  }
-})
+    },
+  },
+});
 </script>

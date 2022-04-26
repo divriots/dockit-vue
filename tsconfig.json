@@ -3,17 +3,18 @@
     "target": "ESNext",
     "outDir": "lib",
     "allowJs": true,
-    "allowNonTsExtensions": true,
     "experimentalDecorators": true,
     "jsx": "preserve",
     "reactNamespace": "React",
     "module": "ESNext",
+    "skipLibCheck": true,
     "moduleResolution": "Node",
     "sourceMap": true,
     "baseUrl": ".",
     "paths": {
       "~/*": ["*"],
-      "@divriots/dockit-vue/*": ["*"]
+      "@divriots/dockit-vue/*": ["*"],
+      "@divriots/dockit-vue": ["index"]
     }
   }
 }
