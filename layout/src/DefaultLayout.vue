@@ -2,25 +2,40 @@
   <header :class="`header ${colorTheme}`">
     <div class="logo" aria-label="dockit-vue" v-html="logoSvg"></div>
     <div class="content-top">
-      <button class="navigation-toggle" @click="toggleMenu" aria-label="" v-html="menuOpen ? xSvg : menuSvg"></button>
-      <button class="color-switch" @click="toggleColorTheme" aria-label="Color switch"
-        v-html="colorTheme === 'dark' ? sunSvg : moonSvg"></button>
+      <button
+        class="navigation-toggle"
+        @click="toggleMenu"
+        aria-label=""
+        v-html="menuOpen ? xSvg : menuSvg"
+      ></button>
+      <button
+        class="color-switch"
+        @click="toggleColorTheme"
+        aria-label="Color switch"
+        v-html="colorTheme === 'dark' ? sunSvg : moonSvg"
+      ></button>
     </div>
   </header>
   <aside :class="`navigation ${colorTheme}`">
     <div class="prose dark:prose-invert">
-      <ul v-for="group in pagesGraph.filter(
-        (group) => !group.children || group.children.length > 0
-      )">
+      <ul
+        v-for="group in pagesGraph.filter(
+          (group) => !group.children || group.children.length > 0
+        )"
+      >
         <li>
           <span v-if="group.children" class="package">{{ group.key }}</span>
           <ul v-for="child in group.children || [group]">
             <li>
-              <a :href="getPageUrlWithoutOrigin(child.page)" :aria-current="
-                currentPage === getPageUrlWithoutOrigin(child.page)
-                  ? 'location'
-                  : undefined
-              ">{{ child.key }}</a>
+              <a
+                :href="getPageUrlWithoutOrigin(child.page)"
+                :aria-current="
+                  currentPage === getPageUrlWithoutOrigin(child.page)
+                    ? 'location'
+                    : undefined
+                "
+                >{{ child.key }}</a
+              >
             </li>
           </ul>
         </li>
@@ -50,8 +65,8 @@ import { ColorThemeKey } from './LayoutConstants';
 
 const props = defineProps<{
   docContext: Context & {
-    mapPageUrlToRenderModuleUrl: any
-  }
+    mapPageUrlToRenderModuleUrl: any;
+  };
 }>();
 
 const { pagesGraph, base, mapPageUrlToRenderModuleUrl } = props.docContext;
@@ -64,13 +79,15 @@ setupSpeedyLinks({
 const getPageUrlWithoutOrigin = (page: Page) => base + page.url;
 const currentPage = location.pathname;
 const colorTheme = ref(
-  localStorage.getItem('colorScheme') || (
-    window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light')
+  localStorage.getItem('colorScheme') ||
+    (window.matchMedia('(prefers-color-scheme: dark)').matches
+      ? 'dark'
+      : 'light')
 );
 const toggleColorTheme = () => {
   colorTheme.value = colorTheme.value === 'dark' ? 'light' : 'dark';
-  localStorage.setItem('colorScheme', colorTheme.value)
-}
+  localStorage.setItem('colorScheme', colorTheme.value);
+};
 const menuOpen = ref(false);
 const toggleMenu = () => (menuOpen.value = !menuOpen.value);
 const displayNav = computed(() => (menuOpen.value ? 'block' : 'none'));
@@ -97,7 +114,9 @@ body {
 
 :root {
   --dockit-vue-spacer: 1rem;
-  --dockit-vue-header-height: calc(var(--dockit-vue-header-content-height) + 2 * var(--dockit-vue-spacer));
+  --dockit-vue-header-height: calc(
+    var(--dockit-vue-header-content-height) + 2 * var(--dockit-vue-spacer)
+  );
   --dockit-vue-nav-width: calc(12rem + 2 * var(--dockit-vue-spacer));
   --dockit-vue-header-content-height: 3rem;
 
@@ -105,7 +124,9 @@ body {
 }
 
 html {
-  scroll-padding-top: calc(var(--dockit-vue-header-height) + var(--dockit-vue-spacer));
+  scroll-padding-top: calc(
+    var(--dockit-vue-header-height) + var(--dockit-vue-spacer)
+  );
 }
 </style>
 
@@ -225,7 +246,7 @@ ul {
     }
   }
 
-  >ul {
+  > ul {
     margin-top: calc(2 * var(--dockit-vue-spacer));
   }
 }
@@ -234,11 +255,15 @@ ul {
   position: relative;
   min-height: 100vh;
   padding: calc(2 * var(--dockit-vue-spacer));
-  padding-top: calc(var(--dockit-vue-header-height) + 2 * var(--dockit-vue-spacer));
+  padding-top: calc(
+    var(--dockit-vue-header-height) + 2 * var(--dockit-vue-spacer)
+  );
   padding-left: calc(3 * var(--dockit-vue-spacer));
 
   @media screen and (min-width: 1024px) {
-    padding-left: calc(var(--dockit-vue-nav-width) + 3 * var(--dockit-vue-spacer));
+    padding-left: calc(
+      var(--dockit-vue-nav-width) + 3 * var(--dockit-vue-spacer)
+    );
   }
 }
 </style>

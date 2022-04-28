@@ -1,6 +1,5 @@
 <script setup>
-import Description from '@divriots/dockit-vue/description/src/Description.vue';
-import Props from '@divriots/dockit-vue/props/src/Props.vue';
+import { Description, Props } from '@divriots/dockit-vue';
 </script>
 
 # Props component

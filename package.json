@@ -5,6 +5,10 @@
   "license": "MIT",
   "type": "module",
   "homepage": "{{ homepage }}",
+  "exports": {
+    ".": "./index.js"
+  },
+  "types": "index.d.ts",
   "scripts": {
     "serve": "npx backlight@latest serve JwppqaVhCm2NyL9qmkDM --open"
   },

@@ -1,5 +1,5 @@
 import Layout from '~/internals/src/Layout.vue';
-import { registerComponents } from '@divriots/dockit-vue';
+import { registerComponents } from '~/index';
 
 export default {
   Layout: Layout,

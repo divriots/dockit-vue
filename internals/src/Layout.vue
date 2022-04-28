@@ -5,7 +5,7 @@
 </template>
 
 <script setup lang="ts">
-import Layout from '@divriots/dockit-vue/layout/src/DefaultLayout.vue';
+import Layout from '~/layout/src/DefaultLayout.vue';
 // TODO expose backlight typings
 // @ts-ignore
 import * as docContext from '~doc-context';

@@ -1,5 +1,5 @@
 <script setup>
-import Description from '@divriots/dockit-vue/description/src/Description.vue';
+import { Description } from '@divriots/dockit-vue';
 </script>
 
 # Description component

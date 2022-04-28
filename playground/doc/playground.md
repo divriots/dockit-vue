@@ -1,7 +1,5 @@
 <script setup>
-import Description from '@divriots/dockit-vue/description/src/Description.vue';
-import Props from '@divriots/dockit-vue/props/src/Props.vue';
-import Playground from '@divriots/dockit-vue/playground/src/Playground.vue';
+import { Props, Description, Playground } from '@divriots/dockit-vue';
 
 const advancedPlaygroundCode = `<Playground 
     code="<Props :of='Description'></Props>"
