@@ -1,6 +1,8 @@
 <template>
   <header :class="`header ${colorTheme}`">
-    <div class="logo" aria-label="dockit-vue" v-html="logoSvg"></div>
+    <div class="logo">
+      <slot name="logo"></slot>
+    </div>
     <div class="content-top">
       <button
         class="navigation-toggle"
@@ -57,7 +59,6 @@ import type { Page, Context } from '@divriots/studio-doc-compiler';
 import { setupSpeedyLinks } from '@divriots/dockit-core/speedy-links';
 import moonSvg from './moon.svg?raw';
 import sunSvg from './sun.svg?raw';
-import logoSvg from './logo.svg?raw';
 import menuSvg from './menu.svg?raw';
 import xSvg from './x.svg?raw';
 import { computed, provide, ref } from 'vue';
@@ -157,14 +158,8 @@ ul {
   border-bottom: 1px solid #e5e5e5;
 
   .logo {
-    color: #f8c307;
     padding: var(--dockit-vue-spacer);
-    width: var(--dockit-vue-nav-width);
-
-    > :first-child {
-      width: auto;
-      height: var(--dockit-vue-header-content-height);
-    }
+    display: flex;
   }
 
   .content-top {

@@ -17,19 +17,24 @@
         <template v-else>
           <tr v-for="prop in componentProps">
             <td>{{ prop.name }}</td>
-            <td>{{ prop.description }}
+            <td>
+              {{ prop.description }}
               <template v-for="example of prop.tags?.example">
-                <div><span class="example-header">Example: </span><span class="example">{{ example.description }}</span>
+                <div>
+                  <span class="example-header">Example: </span
+                  ><span class="example">{{ example.description }}</span>
                 </div>
               </template>
             </td>
             <td>{{ prop.type?.name }}</td>
             <td>
               {{
-                prop.defaultValue?.func ? 'Function' : prop.defaultValue?.value ?? '-'
+                prop.defaultValue?.func
+                  ? 'Function'
+                  : prop.defaultValue?.value ?? '-'
               }}
             </td>
-            <td>{{ prop.required }}</td>
+            <td>{{ prop.required ?? false }}</td>
           </tr>
         </template>
       </tbody>
@@ -38,7 +43,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from "vue";
+import { defineComponent } from 'vue';
 
 /**
  * Provides the props of a component based on the comments of its props.
@@ -48,14 +53,14 @@ export default defineComponent({
     /**
      *  Component with documentation info for which to list the props details.
      */
-    of: { type: Object, required: true }
+    of: { type: Object, required: true },
   },
   computed: {
     componentProps() {
       return this.of.__docgenInfo?.props;
-    }
-  }
-})
+    },
+  },
+});
 </script>
 
 <style scoped lang="scss">
