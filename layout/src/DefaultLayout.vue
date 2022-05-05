@@ -228,6 +228,10 @@ ul {
     opacity: 0.8;
   }
 
+  > div > ul {
+    margin-top: calc(var(--dockit-vue-spacer));
+  }
+
   ul {
     list-style: none;
 
@@ -237,7 +241,7 @@ ul {
     }
 
     li {
-      margin: calc(var(--dockit-vue-spacer) / 2) 0;
+      margin: 0;
     }
   }
 
